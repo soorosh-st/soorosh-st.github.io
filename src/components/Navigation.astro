@@ -1,0 +1,56 @@
+---
+import Icon from './Icon.astro';
+import { site } from '../data/site';
+interface Props { page?: 'home' | 'no-call' | 'no-message' | 'no-contact' | 'notes' | '404'; }
+const { page = 'home' } = Astro.props;
+const isWork = page.startsWith('no-');
+const links = [
+  { label: 'Home', href: '/', key: 'home' },
+  { label: 'Selected work', href: '/#work', key: 'work' },
+  { label: 'About me', href: '/#about', key: 'about' },
+  { label: 'Notes & updates', href: '/#notes', key: 'notes' },
+  { label: 'Get in touch', href: '/#contact', key: 'contact' },
+];
+---
+<header class="rail">
+  <a class="wordmark" href="/" aria-label="Soorosh, home"><span class="brand-mark" aria-hidden="true">s<span>:</span></span><span>soorosh<span class="brand-dot">.</span></span></a>
+  <p class="rail-intro">Independent developer.<br />Considered by design.</p>
+  <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav" hidden>Menu <Icon name="plus" size={18} /></button>
+  <nav id="site-nav" aria-label="Main navigation">
+    {links.map(link => <a href={link.href} class:list={['nav-link', { 'is-active': page === 'home' && link.key === 'home', 'work-current': (isWork && link.key === 'work') || (page === 'notes' && link.key === 'notes') }]} aria-current={page === 'home' && link.key === 'home' ? 'page' : (isWork && link.key === 'work') || (page === 'notes' && link.key === 'notes') ? 'location' : undefined} data-section={link.key}><span>{link.label}</span><span class="nav-indicator" aria-hidden="true">↗</span></a>)}
+    <a href={site.github} class="nav-github">GitHub <Icon name="external" size={17} /></a>
+  </nav>
+  <div class="rail-bottom"><span class="status-dot" aria-hidden="true"></span>Building toward 1.0<p>Small details.<br />Everyday things.</p></div>
+</header>
+
+<script>
+  const toggle = document.querySelector<HTMLButtonElement>('.menu-toggle');
+  const nav = document.querySelector<HTMLElement>('#site-nav');
+  if (toggle && nav) {
+    toggle.hidden = false;
+    const close = () => { toggle.setAttribute('aria-expanded', 'false'); nav.classList.remove('is-open'); };
+    toggle.addEventListener('click', () => {
+      const open = toggle.getAttribute('aria-expanded') !== 'true';
+      toggle.setAttribute('aria-expanded', String(open));
+      nav.classList.toggle('is-open', open);
+    });
+    nav.querySelectorAll('a').forEach(link => link.addEventListener('click', close));
+    document.addEventListener('keydown', event => {
+      if (event.key === 'Escape' && toggle.getAttribute('aria-expanded') === 'true') { close(); toggle.focus(); }
+    });
+  }
+  const sectionLinks = document.querySelectorAll<HTMLAnchorElement>('.nav-link[data-section]');
+  if (document.querySelector('[data-homepage]') && 'IntersectionObserver' in window) {
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (!entry.isIntersecting) return;
+        sectionLinks.forEach(link => {
+          const active = link.dataset.section === entry.target.id;
+          link.classList.toggle('is-active', active);
+          if (active) link.setAttribute('aria-current', 'location'); else link.removeAttribute('aria-current');
+        });
+      });
+    }, { rootMargin: '-10% 0px -55% 0px', threshold: 0 });
+    document.querySelectorAll('main > section[id]').forEach(section => observer.observe(section));
+  }
+</script>

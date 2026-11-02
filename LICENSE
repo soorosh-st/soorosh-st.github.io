@@ -1,0 +1,118 @@
+PERSONAL USE AND NON-COMMERCIAL LICENSE
+Version 1.0 — 11 September 2026
+
+Copyright (c) 2026 the project owner (the “Licensor”).
+
+This is a custom source-available license. It is not an OSI-approved Open
+Source license. It is intended to permit personal experimentation and
+modification while reserving commercial and business rights to the Licensor.
+
+1. Definitions
+
+“Project” means the source code, application code, UI prototype, visual
+designs, documentation, original assets, configuration, and other material in
+this repository that is owned by the Licensor. A component that contains its
+own license or third-party notice is governed by that license for that
+component.
+
+“Personal Use” means use by an individual for private, educational,
+experimental, hobby, accessibility, or portfolio purposes, where the use is
+not connected to a business, paid service, commercial product, or revenue-
+generating activity.
+
+“Commercial or Business Use” means any use intended to generate revenue,
+support a business, reduce business costs, serve clients, or promote, operate,
+or distribute a commercial activity. This includes selling, licensing,
+renting, subscription access, paid support, paid freelance or agency work,
+advertising or sponsorship monetization, in-app purchases, donations tied to
+the Project, use in a paid product or service, use inside a business or
+organization, and bundling the Project with a commercial offering.
+
+2. Permission for Personal Use
+
+Subject to this license, the Licensor grants you a worldwide, royalty-free,
+non-exclusive license to:
+
+- run and use the Project for Personal Use;
+- inspect, copy, study, modify, adapt, and create derivative works for
+  Personal Use;
+- publish or share the original Project or modified versions free of charge
+  for Personal Use, provided that the conditions in Section 3 are followed.
+
+3. Conditions for Sharing and Derivatives
+
+If you share the Project or a derivative version, you must:
+
+- include this license with the copy;
+- keep existing copyright, attribution, owner-identity, origin, and
+  third-party notices;
+- clearly identify material changes you made;
+- preserve the non-commercial restriction in this license;
+- avoid implying that the Licensor endorses you, your version, or your use;
+- avoid using the Project’s names, marks, or presentation to imply official
+  affiliation with Nothing, Google, Android, or another third party.
+
+Even in a private, educational, portfolio, or other Personal Use project, you
+may not erase, hide, replace, or obscure the Licensor’s identity, copyright
+notice, original-project attribution, repository origin, or license terms. If
+the Project is embedded in or substantially reused by another personal
+project, that project must include a clear attribution such as “Based on the
+Independent Communication Suite by the project owner” together with a link to
+the original repository when one is available.
+
+You may not remove or alter license notices in a way that hides the origin or
+license terms of the Project.
+
+4. Commercial and Business Rights Reserved
+
+Commercial or Business Use is not permitted under this license. All such
+rights are reserved exclusively to the Licensor. A separate written license
+from the Licensor is required before any Commercial or Business Use, including
+use by a company, client, organization, paid product, paid service, or
+monetized distribution channel.
+
+No permission is granted to sublicense the Project for Commercial or Business
+Use. A person who receives a permitted non-commercial copy receives only the
+Personal Use permissions in this license.
+
+5. Third-Party Material
+
+This license applies only to material owned by the Licensor. Third-party
+software, fonts, libraries, documentation, icons, images, and other assets
+remain under their original licenses. You must follow those licenses even
+when the material is included in or used by the Project. In particular, the
+bundled dot font must remain accompanied by its supplied license and readme,
+and Android third-party material is governed by the notices in the Android
+module.
+
+6. Trademarks and Endorsement
+
+This license does not grant trademark rights. Nothing in the Project or this
+license grants permission to use third-party trademarks or to claim official
+endorsement, partnership, or compatibility certification. The Project is an
+independent Nothing-inspired study and is not official Nothing software.
+
+7. Termination
+
+Your rights under this license terminate automatically if you violate its
+terms. If the violation is cured to the Licensor’s reasonable satisfaction,
+the Licensor may restore permission in writing; restoration is not automatic.
+
+8. Disclaimer of Warranty
+
+THE PROJECT IS PROVIDED “AS IS”, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR
+PURPOSE, TITLE, NON-INFRINGEMENT, OR SECURITY. YOU ARE RESPONSIBLE FOR
+REVIEWING, TESTING, AND USING THE PROJECT SAFELY AND LAWFULLY.
+
+9. Limitation of Liability
+
+TO THE MAXIMUM EXTENT PERMITTED BY LAW, THE LICENSOR SHALL NOT BE LIABLE FOR
+ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, CONSEQUENTIAL, EXEMPLARY, OR OTHER
+DAMAGES ARISING FROM OR RELATED TO THE PROJECT OR THIS LICENSE.
+
+10. Contact for Commercial Permission
+
+For commercial or business licensing, contact the repository owner through the
+contact method published with the repository. No commercial permission exists
+unless it is granted in a separate written agreement by the Licensor.

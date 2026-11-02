@@ -1,0 +1,11 @@
+---
+import Icon from './Icon.astro';
+interface Props { current: 'no-call' | 'no-message' | 'no-contact'; }
+const { current } = Astro.props;
+const apps = [
+  { id: 'no-call', name: 'No Call', copy: 'Make the connection.', icon: 'phone' as const },
+  { id: 'no-message', name: 'No Message', copy: 'Every word matters.', icon: 'message' as const },
+  { id: 'no-contact', name: 'No Contact', copy: 'Your people, within reach.', icon: 'contact' as const },
+];
+---
+<section class="more-work" aria-labelledby="more-title"><div><p class="section-kicker">The rest of the family</p><h2 id="more-title">Good on their own.<br />Familiar together.</h2></div><div>{apps.filter(app => app.id !== current).map(app => <a href={`/work/${app.id}/`}><Icon name={app.icon} size={28} /><span><strong>{app.name}</strong><span>{app.copy}</span></span><Icon name="arrow" /></a>)}</div></section>

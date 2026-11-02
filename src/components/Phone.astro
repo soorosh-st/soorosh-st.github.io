@@ -1,0 +1,11 @@
+---
+interface Props { screen: string; alt: string; class?: string; eager?: boolean; }
+const { screen, alt, class: className, eager = false } = Astro.props;
+---
+<div class:list={['device', className]}>
+  <div class="device-screen">
+    <img src={`/media/${screen}.webp`} alt={alt} width="840" height="1872" loading={eager ? 'eager' : 'lazy'} decoding="async" fetchpriority={eager ? 'high' : 'auto'} />
+    <span class="device-camera" aria-hidden="true"></span>
+  </div>
+  <span class="device-key" aria-hidden="true"></span>
+</div>

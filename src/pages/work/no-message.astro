@@ -1,0 +1,51 @@
+---
+import Base from '../../layouts/Base.astro';
+import Icon from '../../components/Icon.astro';
+import Phone from '../../components/Phone.astro';
+import Film from '../../components/Film.astro';
+import ScreenExplorer from '../../components/ScreenExplorer.astro';
+import RelatedWork from '../../components/RelatedWork.astro';
+import { messageScreens } from '../../data/screens';
+import { site } from '../../data/site';
+const features = [
+  { title: 'A reminder, not another send.', text: 'Attach a local reminder to an original message. Android notification and background limits affect timing; reminders never send SMS.' },
+  { title: 'A clearer look before opening.', text: 'Inspect a link destination offline and understand which characters affect an SMS encoding estimate. Inspection does not fetch the page or certify a link as safe.' },
+  { title: 'Keep a little for yourself.', text: 'Keep local text copies, tagged and pinned items, checklist notes and chat bookmarks. Choose a preferred opening folder. A saved copy can outlive its original.' },
+  { title: 'A moment to change your mind.', text: 'An optional 5–30 second delay gives you a cancel window before SMS handoff. It cannot recall a message already submitted to the carrier.' },
+  { title: 'The right SIM, deliberately.', text: 'Choose sending defaults and conversation preferences. Removed or changed SIMs need review; calling preferences stay separate.' },
+  { title: 'A reply, within reach.', text: 'Eligible notification actions and optional message islands support reply, read and recognised-code copy. Android permissions and build limits apply.' },
+];
+---
+<Base title="No Message — Soorosh" description="A considered Android SMS app. Explore No Message’s inbox, conversations, Saved Messages, scheduling and public alpha." page="no-message">
+  <main id="main" class="showcase showcase-message">
+    <a class="back-link" href="/#work"><span aria-hidden="true">←</span> Selected work</a>
+    <section class="app-hero" aria-labelledby="app-title">
+      <div class="app-hero-copy">
+        <div class="app-intro"><span class="app-icon"><Icon name="message" size={26} /></span><span>Independent Android app</span></div>
+        <h1 id="app-title">No Message<span>.</span></h1>
+        <p class="app-tagline">Every word<br />matters.</p>
+        <p class="app-description">A clearer inbox. A familiar conversation. Room for the words you want to keep, and the thoughts you’ll send later.</p>
+        <div class="app-badges"><span class="badge"><span class="status-dot" aria-hidden="true"></span>Public alpha</span><span>Android 13+</span></div>
+        <div class="hero-actions"><a href={`${site.guides.setup}#no-message`} class="button button-dark">Read the setup guide <Icon name="external" size={18} /></a><a href="#film" class="text-link"><Icon name="play" size={17} />Watch the film</a></div>
+      </div>
+      <figure class="app-hero-art"><span class="composition-disc" aria-hidden="true"></span><Phone screen="message-inbox" alt="No Message inbox with fictional conversations" class="app-phone-back" eager /><Phone screen="message-conversation" alt="No Message conversation with fictional Alex Morgan" class="app-phone-front" eager /><figcaption>Everyday conversations. A personal touch.</figcaption></figure>
+    </section>
+    <div class="project-facts"><div><span>Platform</span><strong>Native Android</strong></div><div><span>Release stage</span><strong>Alpha, toward 1.0</strong></div><div><span>Messaging</span><strong>Carrier SMS</strong></div><a href={site.github}>Follow on GitHub <Icon name="external" size={18} /></a></div>
+    <section class="app-introduction" aria-labelledby="purpose-title"><h2 id="purpose-title">For everyday words.<br />And the ones you keep.</h2><div><p class="lead">Give your conversations a little breathing room.</p><p>Find a chat, keep favourites close, organise categories and pin what matters. Save text or a private note for yourself, then return to a validated original when it’s available.</p><p>No Message works independently. SMS needs an eligible build, Android’s default SMS role and permissions. Carrier charges apply; MMS remains unfinished, and RCS or encrypted internet chat is not an implemented service.</p></div></section>
+    <ScreenExplorer id="no-message" appName="No Message" title={['A place for', 'every thought.']} note="SMS needs an eligible build, the default role and carrier service." screens={messageScreens} />
+    <section class="feature-section" aria-labelledby="feature-title"><div class="section-heading"><h2 id="feature-title">More room<br />for your words.</h2><p class="section-aside">Find. Keep. Reply.<br />Choose when to send.</p></div><div class="feature-grid">{features.map(feature => <article><h3>{feature.title}</h3><p>{feature.text}</p></article>)}</div></section>
+    <Film kind="message" title="See No Message in motion." description="A closer look at conversations and the details around them." />
+    <section class="testing-section" aria-labelledby="testing-title">
+      <div><p class="section-kicker">Help shape 1.0</p><h2 id="testing-title">Your everyday.<br />Your feedback.</h2><p>Test a conversation, try your SIM setup, explore a larger text size. Real-device feedback helps make the next version more comfortable and reliable.</p><a class="button button-dark" href={`${site.guides.testing}#help-test-the-alpha`}>Help test No Message <Icon name="external" size={18} /></a></div>
+      <div class="faq-list">
+        <details open><summary>What do I need to send SMS?<Icon name="plus" size={20} /></summary><p>Android 13+, an eligible role-enabled build, Android’s default SMS role and the relevant permissions. Choose an active sending SIM and check carrier service. A successful Android handoff is not proof of delivery. <a href={`${site.guides.setup}#build-status`}>Check the build and setup guide.</a></p></details>
+        <details><summary>How reliable is send later?<Icon name="plus" size={20} /></summary><p>Schedules can be set up to 30 days ahead. Timing is best effort: Android power limits, force-stop, first unlock after reboot and carrier conditions can affect sending. More than 15 minutes late goes to Needs review. Cancelling cannot recall a submitted SMS. <a href={`${site.guides.features}#scheduling`}>Read the scheduling limits.</a></p></details>
+        <details><summary>What about MMS, RCS and reactions?<Icon name="plus" size={20} /></summary><p>MMS remains unfinished; normal composition does not expose it, and live receiving, outgoing media and MMS delivery/read reports are unavailable. RCS and encrypted internet chat are not implemented. Supported outgoing text reactions are ordinary carrier SMS and may cost money.</p></details>
+        <details><summary>What happens to Saved Messages and Trash?<Icon name="plus" size={20} /></summary><p>Saved Messages are local copies and notes. Trash is a local classification over Android’s provider originals, which another SMS app can still show. Permanent deletion or expiry can remove those originals; clearing app data loses the classification. <a href={`${site.guides.features}#trash`}>Read before deleting or switching apps.</a></p></details>
+        <details><summary>Where can I get builds and share feedback?<Icon name="plus" size={20} /></summary><p>See the <a href={site.releases}>current build status</a>. Public download links will be added when a release is available. Google Play publication is planned; no live listing is verified here. <a href={site.issues}>See what to include</a> with your build, device, Android version and steps, removing private message content and numbers.</p></details>
+      </div>
+    </section>
+    <RelatedWork current="no-message" />
+    <p class="showcase-legal">Promotional screens use fictional people and messages. An independent project, not affiliated with Nothing, Google or Android. Licensed for personal, non-commercial use. <a href={`${site.guides.features}#license`}>Read the license summary</a>.</p>
+  </main>
+</Base>

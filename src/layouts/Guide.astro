@@ -1,0 +1,28 @@
+---
+import Base from './Base.astro';
+import Icon from '../components/Icon.astro';
+import { guides } from '../data/site';
+
+interface Props {
+  frontmatter: { title: string; description: string; updated: string };
+}
+const { frontmatter } = Astro.props;
+const currentPath = Astro.url.pathname;
+const updatedLabel = new Intl.DateTimeFormat('en-GB', { day: 'numeric', month: 'long', year: 'numeric', timeZone: 'UTC' }).format(new Date(`${frontmatter.updated}T12:00:00Z`));
+---
+<Base title={`${frontmatter.title} — Soorosh`} description={frontmatter.description} page="notes">
+  <main id="main" class="guide-page">
+    <a class="back-link" href="/#notes"><span aria-hidden="true">←</span> Notes & updates</a>
+    <header class="guide-header">
+      <p class="section-kicker">The communication suite</p>
+      <h1>{frontmatter.title}</h1>
+      <p class="lead">{frontmatter.description}</p>
+      <p class="guide-date">Reviewed <time datetime={frontmatter.updated}>{updatedLabel}</time></p>
+    </header>
+    <article class="guide-body"><slot /></article>
+    <nav class="guide-next" aria-label="More project guides">
+      <h2>Keep exploring.</h2>
+      {guides.filter(guide => guide.href !== currentPath).map(guide => <a href={guide.href}>{guide.title}<Icon name="arrow" size={18} /></a>)}
+    </nav>
+  </main>
+</Base>

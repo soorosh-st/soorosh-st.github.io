@@ -1,0 +1,24 @@
+---
+import Phone from './Phone.astro';
+import Icon from './Icon.astro';
+import { phoneScreens, type AppScreen } from '../data/screens';
+interface Props { id?: string; appName?: string; title?: string[]; note?: string; screens?: AppScreen[]; }
+const { id = 'no-call', appName = 'No Call', title = ['The details', 'make it yours.'], note = 'Calling functions depend on build, roles and device.', screens = phoneScreens } = Astro.props;
+---
+<section class="explorer" data-screen-explorer aria-labelledby={`${id}-explorer-title`}>
+  <div class="explorer-copy"><p class="section-kicker">Inside {appName}</p><h2 id={`${id}-explorer-title`}>{title.map((line, i) => <>{i > 0 && <br />}{line}</>)}</h2><div class="screen-buttons" aria-label={`Choose a ${appName} screen`}>{screens.map((screen, i) => <button type="button" aria-pressed={i === 0 ? 'true' : 'false'} aria-controls={`${id}-screen-${screen.id}`} data-screen={screen.id}><span>{screen.label}</span><Icon name="arrow" size={20} /></button>)}</div><p class="quiet explorer-note">Actual app screens, edited with fictional content.<br />{note}</p></div>
+  <div class="screen-stage" aria-live="polite" aria-atomic="true">{screens.map((screen, i) => <figure id={`${id}-screen-${screen.id}`} class="screen-panel" hidden={i !== 0}><Phone screen={screen.screen} alt={screen.alt} /><figcaption><h3>{screen.heading}</h3><p>{screen.text}</p></figcaption></figure>)}</div>
+</section>
+<script>
+  document.querySelectorAll<HTMLElement>('[data-screen-explorer]').forEach(explorer => {
+    const buttons = explorer.querySelectorAll<HTMLButtonElement>('[data-screen]');
+    buttons.forEach(button => button.addEventListener('click', () => {
+      buttons.forEach(candidate => {
+        const active = candidate === button;
+        candidate.setAttribute('aria-pressed', String(active));
+        const panel = document.getElementById(candidate.getAttribute('aria-controls') ?? '');
+        if (panel) panel.hidden = !active;
+      });
+    }));
+  });
+</script>

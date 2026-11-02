@@ -1,0 +1,150 @@
+{
+  "prepared": "2026-10-26",
+  "note": "Current supplied app UI, already edited for fictional identities. Website preparation only resizes and encodes screenshots/posters; videos and thumbnails are byte copies. See website/THIRD_PARTY_NOTICES.md.",
+  "assets": [
+    {
+      "source": "artifacts/promo-pilots/2026-10-25/screenshots-v2/phone-recents.png",
+      "file": "phone-recents.webp",
+      "bytes": 54562,
+      "sha256": "ae6e05f4914b6f0dab2babde27779e4f153f20ab1292171c44db11b7659abd03"
+    },
+    {
+      "source": "artifacts/promo-pilots/2026-10-25/screenshots-v2/phone-calling.png",
+      "file": "phone-calling.webp",
+      "bytes": 40534,
+      "sha256": "e56d0d6ba06cf501d0910844192731208701d35ba3d7861fe4d7d0b9e52ed5be"
+    },
+    {
+      "source": "artifacts/promo-pilots/2026-10-25/screenshots-v2/phone-appearance.png",
+      "file": "phone-appearance.webp",
+      "bytes": 28182,
+      "sha256": "39ec87d5e263ffc8b0c31f72c24011662d04501d67fbcfee0816975116a45999"
+    },
+    {
+      "source": "artifacts/promo-pilots/2026-10-25/screenshots-v2/phone-accessibility.png",
+      "file": "phone-accessibility.webp",
+      "bytes": 60790,
+      "sha256": "3d66ba97d30a13beb3013c8b24a99ae510fa1f427452c057cc9089012e84092f"
+    },
+    {
+      "source": "artifacts/promo-pilots/2026-10-25/screenshots-v2/message-inbox.png",
+      "file": "message-inbox.webp",
+      "bytes": 52154,
+      "sha256": "46b976571dc023fc97cb35ebe4122d572b7d0aa90c9dfb834f9d03bd202fd27a"
+    },
+    {
+      "source": "artifacts/promo-pilots/2026-10-25/screenshots-v2/message-conversation.png",
+      "file": "message-conversation.webp",
+      "bytes": 39740,
+      "sha256": "efc84460d997b96c531c1d215aaf12656843b75dd0ea843c8e81afa361d44f11"
+    },
+    {
+      "source": "artifacts/promo-pilots/2026-10-25/screenshots-v2/message-scheduled.png",
+      "file": "message-scheduled.webp",
+      "bytes": 36538,
+      "sha256": "129731584f1236149d9d1c5a42b0d2db1186f3b9368158c55a591f8f2e74a42d"
+    },
+    {
+      "source": "artifacts/promo-pilots/2026-10-25/screenshots-v2/message-messageSettings.png",
+      "file": "message-messageSettings.webp",
+      "bytes": 60374,
+      "sha256": "313119dfedcc1504216032e68ebc754add34174accac315330e331c4c9a56ab2"
+    },
+    {
+      "source": "artifacts/promo-pilots/2026-10-25/screenshots-v2/contact-directory.png",
+      "file": "contact-directory.webp",
+      "bytes": 39630,
+      "sha256": "7f6f4e99f91f9d03e0af22983bf8a02a67ada152848e38b5160e74150fff9e8c"
+    },
+    {
+      "source": "artifacts/promo-pilots/2026-10-25/screenshots-v2/contact-favourites.png",
+      "file": "contact-favourites.webp",
+      "bytes": 35750,
+      "sha256": "03e13d7f6b4e7241efe17b333036e544124d284b2a7ae02361d92ec089bb82e0"
+    },
+    {
+      "source": "artifacts/promo-pilots/2026-10-25/screenshots-v2/contact-details.png",
+      "file": "contact-details.webp",
+      "bytes": 49130,
+      "sha256": "2ae53e9cb4a557eaa8931dd00b8be57e89e2947c640fffd630ea67ca76c66434"
+    },
+    {
+      "source": "artifacts/promo-pilots/2026-10-25/screenshots-v2/contact-edit.png",
+      "file": "contact-edit.webp",
+      "bytes": 37124,
+      "sha256": "4a757578a7f4d7e215481476890db0fb0bd2c0697b4d78ad59831d4dfb09a3af"
+    },
+    {
+      "source": "artifacts/promo-pilots/2026-10-25/screenshots-v2/contact-backup.png",
+      "file": "contact-backup.webp",
+      "bytes": 28462,
+      "sha256": "1130e6937609449dc6db1df825936e9063f0eb7e017313284032284ffd0d2467"
+    },
+    {
+      "source": "docs/assets/no-call-thumbnail.webp",
+      "file": "no-call-thumbnail.webp",
+      "bytes": 97848,
+      "sha256": "b937530ebdc25d9f11c9bde07d8230e7351430e0f364fc56809f88ef7d80e66f"
+    },
+    {
+      "source": "docs/assets/no-message-thumbnail.webp",
+      "file": "no-message-thumbnail.webp",
+      "bytes": 92626,
+      "sha256": "42427829de988235d917ccaffd9609fd9575f3dfb10a666c1edfa7f5a7943e3f"
+    },
+    {
+      "source": "docs/assets/no-contact-thumbnail.webp",
+      "file": "no-contact-thumbnail.webp",
+      "bytes": 86700,
+      "sha256": "292e0f8a77fc5da1d795d34f92c4edb414704ca02f2d4d263439b2e9046d5e79"
+    },
+    {
+      "source": "artifacts/promo-pilots/2026-10-25/suite-poster.png",
+      "file": "suite-poster.webp",
+      "bytes": 54172,
+      "sha256": "930a612dd6f39367247e5286d38c3b4e255ffac1531204d8a5b0c4774e3aff7a"
+    },
+    {
+      "source": "artifacts/promo-pilots/2026-10-25/suite-pilot-1080p.mp4",
+      "file": "suite-pilot-1080p.mp4",
+      "bytes": 18690120,
+      "sha256": "94f759840b9d0e5b048713c20bc943c90d6b24adca1a0cbc1fcc45b7bfba18bc"
+    },
+    {
+      "source": "artifacts/promo-pilots/2026-10-25/phone-poster.png",
+      "file": "phone-poster.webp",
+      "bytes": 43086,
+      "sha256": "71259a2f7e369ba4adf96fe8a69370aec49566f9434cdf359940978f9d4ea586"
+    },
+    {
+      "source": "artifacts/promo-pilots/2026-10-25/phone-pilot-1080p.mp4",
+      "file": "phone-pilot-1080p.mp4",
+      "bytes": 11338507,
+      "sha256": "a75a1b871870231ff76d1a02e6faac45e7d5f3807626ab93f51b4e0ec27e374e"
+    },
+    {
+      "source": "artifacts/promo-pilots/2026-10-25/message-poster.png",
+      "file": "message-poster.webp",
+      "bytes": 40878,
+      "sha256": "88281b79481b67090127374fc096411408bc6d63dfc2bda578a5f045d3f2629c"
+    },
+    {
+      "source": "artifacts/promo-pilots/2026-10-25/message-pilot-1080p.mp4",
+      "file": "message-pilot-1080p.mp4",
+      "bytes": 9338311,
+      "sha256": "0dd85021fbdade8734463d932b08acdd800d51c8679a46ba1e0979021852197e"
+    },
+    {
+      "source": "artifacts/promo-pilots/2026-10-25/contact-poster.png",
+      "file": "contact-poster.webp",
+      "bytes": 39160,
+      "sha256": "b83c164ecae490434e58d186ef29bfda7999b17906de5f4fdcab8048044f52b8"
+    },
+    {
+      "source": "artifacts/promo-pilots/2026-10-25/contact-pilot-1080p.mp4",
+      "file": "contact-pilot-1080p.mp4",
+      "bytes": 8933698,
+      "sha256": "259b9cfd9956a37a1f4b54ff145e96b2d0a8e7123863d57d80c11ee7faf9af89"
+    }
+  ]
+}

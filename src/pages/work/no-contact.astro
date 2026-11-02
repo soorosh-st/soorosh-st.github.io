@@ -1,0 +1,51 @@
+---
+import Base from '../../layouts/Base.astro';
+import Icon from '../../components/Icon.astro';
+import Phone from '../../components/Phone.astro';
+import Film from '../../components/Film.astro';
+import ScreenExplorer from '../../components/ScreenExplorer.astro';
+import RelatedWork from '../../components/RelatedWork.astro';
+import { contactScreens } from '../../data/screens';
+import { site } from '../../data/site';
+const features = [
+  { title: 'A calmer way to save power.', text: 'Set a battery threshold or follow Android Battery Saver. Supported visual effects can pause temporarily without replacing your saved appearance choices.' },
+  { title: 'More than a name and number.', text: 'Edit supported numbers, email, addresses, dates, organisations, notes and more. Available fields and writes depend on the selected account and provider.' },
+  { title: 'Organise with a little intent.', text: 'Use account filters, provider groups and app-local packs. A local pack does not become a synced account group; duplicate suggestions still need your review.' },
+  { title: 'A portrait for the moment.', text: 'Keep a regular contact photo and a separate calling portrait. Compatible No Call can use the latter for supported audio calls, with photos or initials as fallback.' },
+  { title: 'Familiar faces, a little closer.', text: 'Supported shortcuts, a favourite widget and significant-date reminders help with everyday access. Notification permission and Android background scheduling affect reminders.' },
+];
+---
+<Base title="No Contact — Soorosh" description="A clearer place for your people. Explore No Contact’s directory, favourites, contact editing, calling portraits and backup choices." page="no-contact">
+  <main id="main" class="showcase showcase-contact">
+    <a class="back-link" href="/#work"><span aria-hidden="true">←</span> Selected work</a>
+    <section class="app-hero" aria-labelledby="app-title">
+      <div class="app-hero-copy">
+        <div class="app-intro"><span class="app-icon"><Icon name="contact" size={26} /></span><span>Independent Android app</span></div>
+        <h1 id="app-title">No Contact<span>.</span></h1>
+        <p class="app-tagline">Your people.<br />Within reach.</p>
+        <p class="app-description">A familiar name. The details that matter. A considered address book, with room for a more personal touch.</p>
+        <div class="app-badges"><span class="badge"><span class="status-dot" aria-hidden="true"></span>Public alpha</span><span>Android 13+</span></div>
+        <div class="hero-actions"><a href={`${site.guides.setup}#no-contact`} class="button button-dark">Read the setup guide <Icon name="external" size={18} /></a><a href="#film" class="text-link"><Icon name="play" size={17} />Watch the film</a></div>
+      </div>
+      <figure class="app-hero-art"><span class="composition-disc" aria-hidden="true"></span><Phone screen="contact-directory" alt="No Contact directory with fictional contacts" class="app-phone-back" eager /><Phone screen="contact-details" alt="No Contact details for fictional Alex Morgan" class="app-phone-front" eager /><figcaption>A name. A face. The details in between.</figcaption></figure>
+    </section>
+    <div class="project-facts"><div><span>Platform</span><strong>Native Android</strong></div><div><span>Release stage</span><strong>Alpha, toward 1.0</strong></div><div><span>Your address book</span><strong>Android Contacts</strong></div><a href={site.github}>Follow on GitHub <Icon name="external" size={18} /></a></div>
+    <section class="app-introduction" aria-labelledby="purpose-title"><h2 id="purpose-title">A place for<br />familiar faces.</h2><div><p class="lead">Keep your people in focus.</p><p>Browse a phone-first directory, search a name or number, and give favourites their own place. Bring contact details, photos and supported actions together without a suite account.</p><p>No Contact works on its own. Contacts access loads the directory; editing needs a writable account. Sync uses Android’s existing account providers, without a separate No Contact cloud service.</p></div></section>
+    <ScreenExplorer id="no-contact" appName="No Contact" title={['The person.', 'And every detail.']} note="Available fields and edits depend on the account and provider." screens={contactScreens} />
+    <section class="feature-section" aria-labelledby="feature-title"><div class="section-heading"><h2 id="feature-title">The details<br />worth keeping.</h2><p class="section-aside">A clearer directory.<br />A more personal address book.</p></div><div class="feature-grid">{features.map(feature => <article><h3>{feature.title}</h3><p>{feature.text}</p></article>)}</div></section>
+    <section class="transfer-section" aria-labelledby="transfer-title"><div class="section-heading"><h2 id="transfer-title">Bring the right<br />details with you.</h2><a href={`${site.guides.setup}#back-up-and-restore`} class="text-link">Full backup comparison <Icon name="external" size={17} /></a></div><div class="transfer-options"><article><h3>VCF</h3><p>Contact-card transfer.</p><span>Supported fields only. Embedded photo import is not supported.</span></article><article><h3>CSV</h3><p>Spreadsheet-style transfer.</p><span>Map and review supported fields. Not a lossless full-contact archive.</span></article><article><h3>Advanced archive</h3><p>A No Contact-specific format.</p><span>Review its supported coverage, including private portraits and links. Settings have a separate archive.</span></article></div></section>
+    <Film kind="contact" title="See No Contact in motion." description="Familiar faces, thoughtful details and a clearer directory." />
+    <section class="testing-section" aria-labelledby="testing-title">
+      <div><p class="section-kicker">Help shape 1.0</p><h2 id="testing-title">Made for people.<br />Refined with you.</h2><p>Try your account sources, explore the editor or review a sample import. Real-device feedback helps make the address book more useful to more people.</p><a class="button button-dark" href={`${site.guides.testing}#help-test-the-alpha`}>Help test No Contact <Icon name="external" size={18} /></a></div>
+      <div class="faq-list">
+        <details open><summary>Do I need the other two apps?<Icon name="plus" size={20} /></summary><p>No. No Contact works independently on Android 13+ with Contacts access. Calling, messaging and editing can use compatible Android handlers. Optional calling portraits in No Call require compatible installations; their absence does not block the address book.</p></details>
+        <details><summary>Why is a contact missing from the directory?<Icon name="plus" size={20} /></summary><p>Everyday browsing is phone-first: the contact needs a usable number. Check Contacts permission and the selected account filter. Administrative account totals and transfer can include records beyond that everyday directory.</p></details>
+        <details><summary>Does it sync contacts to the cloud?<Icon name="plus" size={20} /></summary><p>No Contact uses Android’s existing account providers. A sync request does not prove cloud completion. Local packs, private calling portraits and other app-owned metadata have different storage and backup behaviour. <a href={`${site.guides.privacy}`}>Read privacy and permissions.</a></p></details>
+        <details><summary>Does export preserve everything?<Icon name="plus" size={20} /></summary><p>No single format should be assumed to preserve every field, photo and setting. Review the <a href={`${site.guides.setup}#back-up-and-restore`}>backup comparison</a> and import results before deleting originals. VCF/CSV are unencrypted; read-only and SIM sources have write limits.</p></details>
+        <details><summary>Where can I get builds and share feedback?<Icon name="plus" size={20} /></summary><p>See the <a href={site.releases}>current build status</a>. Public download links will be added when a release is available. Google Play publication is planned; no live listing is verified here. <a href={site.issues}>See what to include</a> with your build, device, Android version and account type, removing private contacts and raw backups.</p></details>
+      </div>
+    </section>
+    <RelatedWork current="no-contact" />
+    <p class="showcase-legal">Promotional screens use fictional people, names and numbers. An independent project, not affiliated with Nothing, Google or Android. Licensed for personal, non-commercial use. <a href={`${site.guides.features}#license`}>Read the license summary</a>.</p>
+  </main>
+</Base>

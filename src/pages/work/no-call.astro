@@ -1,0 +1,34 @@
+---
+import Base from '../../layouts/Base.astro';
+import Icon from '../../components/Icon.astro';
+import Phone from '../../components/Phone.astro';
+import Film from '../../components/Film.astro';
+import ScreenExplorer from '../../components/ScreenExplorer.astro';
+import RelatedWork from '../../components/RelatedWork.astro';
+import { site } from '../../data/site';
+const features = [
+  { title: 'Pick up where you left off.', text: 'Keep notes, organise reminders into categories and give a callback its own place. A reminder leaves the decision to call with you.' },
+  { title: 'A quieter use of power.', text: 'Choose when this app reduces supported visual effects. Follow Android Battery Saver or set a threshold; your saved appearance stays yours.' },
+  { title: 'A keypad that knows its job.', text: 'Editable numbers, copy and paste, display formatting and contact suggestions. Familiar actions, thoughtfully placed.' },
+  { title: 'Your calls. Your SIM choice.', text: 'Global and per-contact calling-account preferences, with checks when a saved account is no longer available. Calling and SMS choices stay separate.' },
+  { title: 'A little less interruption.', text: 'Optional floating call islands keep supported controls nearby. Overlay access is needed outside the app; dismissing an island does not end the call.' },
+  { title: 'Ready with a response.', text: 'Edit quick replies for the moments you can’t answer. Supported replies use Android Telecom and the current SMS handler.' },
+];
+---
+<Base title="No Call — Soorosh" description="A more considered Android calling experience. Explore No Call’s current interface, call controls, personalisation and public alpha." page="no-call">
+  <main id="main" class="showcase">
+    <a class="back-link" href="/#work"><span aria-hidden="true">←</span> Selected work</a>
+    <section class="app-hero" aria-labelledby="app-title">
+      <div class="app-hero-copy"><div class="app-intro"><span class="app-icon"><Icon name="phone" size={26} /></span><span>Independent Android app</span></div><h1 id="app-title">No Call<span>.</span></h1><p class="app-tagline">Make the<br />connection.</p><p class="app-description">A more personal place for your calls. Familiar controls, considered details, and a look you can make your own.</p><div class="app-badges"><span class="badge"><span class="status-dot" aria-hidden="true"></span>Public alpha</span><span>Android 13+</span></div><div class="hero-actions"><a href={`${site.guides.setup}`} class="button button-dark">Read the setup guide <Icon name="external" size={18} /></a><a href="#film" class="text-link"><Icon name="play" size={17} />Watch the film</a></div></div>
+      <figure class="app-hero-art"><span class="composition-disc" aria-hidden="true"></span><Phone screen="phone-recents" alt="No Call recent calls with fictional data" class="app-phone-back" eager /><Phone screen="phone-calling" alt="No Call calling screen with a fictional calling portrait" class="app-phone-front" eager /><figcaption>Familiar. Personal. Independently yours.</figcaption></figure>
+    </section>
+    <div class="project-facts"><div><span>Platform</span><strong>Native Android</strong></div><div><span>Release stage</span><strong>Alpha, toward 1.0</strong></div><div><span>Part of</span><strong>Communication suite</strong></div><a href={site.github}>Follow on GitHub <Icon name="external" size={18} /></a></div>
+    <section class="app-introduction" aria-labelledby="purpose-title"><h2 id="purpose-title">A phone app.<br />With a point of view.</h2><div><p class="lead">The everyday call deserves a little more care.</p><p>No Call brings contact and history search, incoming and ongoing audio-call controls, SIM preferences and personalisation into one focused app.</p><p>Use it on its own. Compatible No Contact calling portraits are an optional extra, with ordinary photos or initials as a fallback.</p></div></section>
+    <ScreenExplorer />
+    <section class="feature-section" aria-labelledby="feature-title"><div class="section-heading"><h2 id="feature-title">Built around<br />the everyday.</h2><p class="section-aside">Useful choices.<br />A focused calling experience.</p></div><div class="feature-grid">{features.map(feature => <article><h3>{feature.title}</h3><p>{feature.text}</p></article>)}</div></section>
+    <Film kind="phone" title="See No Call in motion." description="A promotional tour of the current interface." />
+    <section class="testing-section" aria-labelledby="testing-title"><div><p class="section-kicker">Help shape 1.0</p><h2 id="testing-title">Still alpha.<br />Already personal.</h2><p>No Call is being tested and refined. Your experience on a real device helps decide what needs attention next.</p><a class="button button-dark" href={`${site.guides.testing}#help-test-the-alpha`}>Help test No Call <Icon name="external" size={18} /></a></div><div class="faq-list"><details open><summary>What do I need to use it?<Icon name="plus" size={20} /></summary><p>Android 13 or later and an eligible build. Phone functions need Android’s default Phone role and the relevant permissions. Device and carrier capabilities decide which controls are available. <a href={`${site.guides.setup}#build-status`}>Check the build and setup guide.</a></p></details><details><summary>Where can I get updates?<Icon name="plus" size={20} /></summary><p>See the <a href={site.releases}>current build status</a> and follow Soorosh on GitHub. Public download links will be added when a release is available. Google Play publication is planned; no live listing is verified in this prototype.</p></details><details><summary>Does it support video calls?<Icon name="plus" size={20} /></summary><p>The promotional film includes a simulated video-call interface. A separate, initially off internal experiment uses Android Telecom and carrier video. Live compatibility is unverified; No Call is not an internet video-calling service.</p></details><details><summary>What feedback is useful?<Icon name="plus" size={20} /></summary><p>Include the app build, device, Android version, steps and expected versus actual behaviour. Add SIM or carrier details only when relevant. Remove private names, numbers and other personal data from attachments. <a href={site.issues}>See what to include.</a></p></details></div></section>
+    <RelatedWork current="no-call" />
+    <p class="showcase-legal">An independent project, not affiliated with Nothing, Google or Android. Hardware mockups are illustrative. Licensed for personal, non-commercial use. <a href={`${site.guides.features}#license`}>Read the license summary</a>.</p>
+  </main>
+</Base>

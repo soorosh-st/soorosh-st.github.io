@@ -1,0 +1,61 @@
+---
+import Base from '../layouts/Base.astro';
+import Icon from '../components/Icon.astro';
+import Phone from '../components/Phone.astro';
+import Film from '../components/Film.astro';
+import { guides, site, updates } from '../data/site';
+---
+<Base title="Soorosh — Independent developer" description="Independent Android apps, considered interfaces and the details in between. Explore No Call, No Message and No Contact.">
+  <main id="main" data-homepage>
+    <section class="hero" id="home" aria-labelledby="intro-title">
+      <div class="hero-copy">
+        <p class="hello"><span class="hello-line" aria-hidden="true"></span>Hi, I’m Soorosh.</p>
+        <h1 id="intro-title">Everyday,<br />considered.</h1>
+        <p class="hero-description">I design and build independent Android apps. Focused interfaces, room for personality, and care for the small things.</p>
+        <div class="hero-actions"><a href="#work" class="button button-dark">Explore my work <Icon name="arrow" /></a><a href="#film" class="text-link"><Icon name="play" size={17} />Watch the suite</a></div>
+        <a href="#work" class="current-project"><span class="status-dot" aria-hidden="true"></span>Currently building the communication suite <Icon name="arrow" size={16} /></a>
+      </div>
+      <figure class="hero-visual">
+        <div class="phone-composition">
+          <span class="composition-disc" aria-hidden="true"></span>
+          <Phone screen="contact-directory" alt="No Contact directory with fictional contacts" class="hero-phone hero-phone-contact" eager />
+          <Phone screen="message-inbox" alt="No Message inbox with fictional conversations" class="hero-phone hero-phone-message" eager />
+          <Phone screen="phone-calling" alt="No Call audio-call screen with a fictional calling portrait" class="hero-phone hero-phone-call" eager />
+        </div>
+        <figcaption><span class="mini-rule" aria-hidden="true"></span>Three independent apps. One shared point of view.</figcaption>
+      </figure>
+      <div class="hero-bottom"><span>Android apps / Interface design / The small details</span><a href="#work">Scroll to explore <span aria-hidden="true">↓</span></a></div>
+    </section>
+
+    <section class="work-section" id="work" aria-labelledby="work-title">
+      <div class="section-heading"><div><p class="section-kicker">Selected work</p><h2 id="work-title">People. Words.<br />Connection.</h2></div><p class="section-aside">Everyday essentials, with a little more intention.<br />Use one app, two, or all three.</p></div>
+      <article class="featured-project">
+        <a class="featured-art" href="/work/no-call/" aria-label="Explore the No Call showcase"><img src="/media/no-call-thumbnail.webp" alt="No Call presented in a Nothing-inspired phone mockup" width="1600" height="900" loading="lazy" /></a>
+        <div class="featured-copy"><div class="project-heading"><span class="app-icon"><Icon name="phone" size={25} /></span><span class="badge">Public alpha</span></div><p class="project-kind">Android / Phone</p><h3>No Call<span>.</span></h3><p>A familiar connection.<br />A more personal calling experience.</p><p class="project-details">Search, call controls, SIM preferences and optional call islands. Built to work on its own.</p><a class="text-link project-link" href="/work/no-call/">Explore No Call <Icon name="arrow" /></a></div>
+      </article>
+      <div class="project-pair">
+        <article class="project-card"><a class="project-art" href="/work/no-message/" aria-label="Explore the No Message showcase"><img src="/media/no-message-thumbnail.webp" alt="No Message inbox in a phone mockup" width="1600" height="900" loading="lazy" /></a><div class="project-card-info"><div><p class="project-kind">Android / Messages</p><h3>No Message</h3><p>Every word, a little more considered.</p></div><a class="round-link" href="/work/no-message/" aria-label="Explore No Message"><Icon name="arrow" /></a></div></article>
+        <article class="project-card"><a class="project-art" href="/work/no-contact/" aria-label="Explore the No Contact showcase"><img src="/media/no-contact-thumbnail.webp" alt="No Contact directory in a phone mockup" width="1600" height="900" loading="lazy" /></a><div class="project-card-info"><div><p class="project-kind">Android / Contacts</p><h3>No Contact</h3><p>A clearer place for your people.</p></div><a class="round-link" href="/work/no-contact/" aria-label="Explore No Contact"><Icon name="arrow" /></a></div></article>
+      </div>
+      <p class="media-note">Alpha app UI, edited with fictional demo content. Newer builds may differ. Phone mockups are illustrative. Independent of Nothing, Google and Android.</p>
+    </section>
+
+    <Film kind="suite" title="A closer look." description="The communication suite, in motion." />
+
+    <section class="about-section" id="about" aria-labelledby="about-title">
+      <div><p class="section-kicker">About me</p><h2 id="about-title">I care about<br />how it feels<br />to use.</h2></div>
+      <div class="about-copy"><p class="lead">The things we open every day deserve the most attention.</p><p>I’m Soorosh. My current focus is No Call, No Message and No Contact: independent Android apps for everyday communication. A shared visual language brings them together; each app is useful on its own.</p><p>I care about the details you notice over time: a clear action, a comfortable type size, a setting that makes an interface feel like yours. The suite is in alpha, and feedback is part of building it.</p><div class="principles"><span>Native Android</span><span>Interface design</span><span>Personalisation</span><span>Usability</span></div><a href={site.repository} class="text-link">{site.repositoryLabel} <Icon name="external" size={18} /></a></div>
+    </section>
+
+    <section class="notes-section" id="notes" aria-labelledby="notes-title">
+      <div class="section-heading"><div><p class="section-kicker">From the project</p><h2 id="notes-title">Open the notebook.</h2></div><a class="text-link" href={site.guides.features}>Project overview <Icon name="arrow" size={17} /></a></div>
+      <p class="updates-context">Development notes · <time datetime="2026-11-02">2 November 2026</time></p>
+      <div class="update-list">{updates.map(update => <article class="update-row"><p class="update-app">{update.app}</p><div><h3><a href={update.href}>{update.title}<Icon name="arrow" size={19} /></a></h3><p>{update.text}</p></div></article>)}</div>
+      <h3 class="guide-list-heading">A few useful details.</h3>
+      <div class="guide-list">{guides.map(guide => <a href={guide.href} class="guide-row"><h3>{guide.title}</h3><p>{guide.description}</p><Icon name="arrow" /></a>)}</div>
+      <div class="alpha-note"><span class="status-dot" aria-hidden="true"></span><div><strong>A work in progress. With you.</strong><p>The apps are in public alpha, working toward 1.0. Real-device testing and thoughtful feedback help shape what comes next.</p></div><a href={site.issues} class="text-link">Share feedback <Icon name="arrow" size={18} /></a></div>
+    </section>
+
+    <section class="contact-section" id="contact" aria-labelledby="contact-title"><p class="section-kicker">Get in touch</p><div class="contact-main"><h2 id="contact-title">Have a thought?<br />Let’s hear it.</h2><a class="contact-arrow" href={site.github} aria-label="Visit Soorosh on GitHub"><Icon name="external" size={66} /></a></div><div class="contact-links"><a href={site.github}>Find me on GitHub <Icon name="external" size={18} /></a><a href={site.issues}>Testing & feedback <Icon name="arrow" size={18} /></a></div></section>
+  </main>
+</Base>
